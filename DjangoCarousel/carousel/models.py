@@ -1,9 +1,9 @@
 from django.db import models
 
 class CarouselModel(models.Model):
-    name = models.CharField("название", max_length=100)
-    picture = models.FilePathField(path="carousel/static/img")
-
+    name = models.CharField("Название", max_length=100)
+    picture = models.ImageField("Изображение")
+    my_order = models.PositiveIntegerField(default=0, blank=False, null=False)
 
     class Meta:
         verbose_name = 'Изображение'
