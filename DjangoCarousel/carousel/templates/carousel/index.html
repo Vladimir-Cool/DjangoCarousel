@@ -15,7 +15,12 @@
 <body>
 <header>
     <p>тест</p>
-    {{ data }}
+    {% for el in data %}
+    <p>{{ el.name }} - {{ el.picture }}</p>
+    <img src='{{el.picture.url}}' style='max-height: 90px;'>
+
+    {% endfor %}
+    {{ data.as_p }}
 </header>
 
 <main>
