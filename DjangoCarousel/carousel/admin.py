@@ -11,5 +11,7 @@ class CarouselModelAdmin(SortableAdminMixin, admin.ModelAdmin):
     readonly_fields = ("preview",)
 
     def preview(self, obj):
-        return mark_safe(f"<img src='{obj.picture.url}' style='max-height: 90px;'>")
+        if obj.picture:
+            return mark_safe(f"<img src='{obj.picture.url}' style='max-height: 90px;'>")
 
+    preview.short_description = "Миниатюра"
